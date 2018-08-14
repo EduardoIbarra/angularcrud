@@ -12,20 +12,20 @@ export class MoviesService {
   }
 
   get() {
-    return this.httpClient.get(this.API_ENDPOINT + '/movies');
+    return this.httpClient.get(this.API_ENDPOINT + '/movie/');
   }
 
   save(movie: Movie) {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.httpClient.post(this.API_ENDPOINT + '/movies', movie, {headers: headers});
+    return this.httpClient.post(this.API_ENDPOINT + '/movie/', movie, {headers: headers});
   }
 
   put(movie) {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.httpClient.put(this.API_ENDPOINT + '/movies/' + movie.id, movie, {headers: headers});
+    return this.httpClient.put(this.API_ENDPOINT + '/movie/' + movie.id + '/', movie, {headers: headers});
   }
 
   delete(id) {
-    return this.httpClient.delete(this.API_ENDPOINT + '/movies/' + id);
+    return this.httpClient.delete(this.API_ENDPOINT + '/movie/' + id + '/');
   }
 }
